@@ -6,7 +6,7 @@ const ThemeLayout = ({ children }) => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#03062E",
+        main: "#262d4a",
       },
       secondary: {
         main: "#1F2353",
@@ -168,16 +168,16 @@ const ThemeLayout = ({ children }) => {
       MuiButton: {
         variants: [
           {
-            props: { variant: "themed" },
+            props: { variant: "buttonOne" },
             style: {
               textTransform: "none",
               color: "#0B0B0B",
               fontSize: "16px",
-              fontWeight: 700,
+              fontWeight: 600,
               boxShadow: "0px 8px 10px rgba(0, 0, 0, 0.25)",
-              backgroundColor: "#E8A125",
+              backgroundColor: "#f15175",
               "&:hover": {
-                backgroundColor: "#E8A125E6",
+                backgroundColor: "#f15175E6",
               },
             },
           },

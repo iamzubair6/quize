@@ -1,7 +1,7 @@
 import slider1 from "@assets/banner01.jpg";
 import slider2 from "@assets/banner02.jpg";
 import playBtn from "@assets/logo.jpg";
-import { Box, Button } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -48,25 +48,91 @@ const Home = () => {
                   position: "relative",
                 }}
               />
-              <Button
-                sx={{
-                  position: "absolute",
-                  zIndex: 9999999999,
-                  bottom: 20,
-                  right: 50,
-                }}
-              >
+              {userNumber === true ? (
                 <Box
-                  component={"img"}
-                  src={playBtn}
                   sx={{
+                    position: "absolute",
+                    zIndex: 9999999999,
+                    bottom: 22,
+                    right: 58,
+                    bgcolor: "#262d4a",
                     borderRadius: "50%",
                     height: "300px",
-                    maxWidth: "300px",
-                    objectFit: "fit",
+                    width: "300px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexDirection: "column",
+                    gap: "5px",
                   }}
-                />
-              </Button>
+                >
+                  <Box
+                    component={"img"}
+                    src={playBtn}
+                    sx={{
+                      height: "160px",
+                      maxWidth: "160px",
+                      objectFit: "fit",
+                    }}
+                  />
+                  <TextField
+                    variant="outlined"
+                    placeholder="01XXXXXXXXX"
+                    sx={{
+                      width: 1,
+                      maxWidth: "200px",
+                      bgcolor: "white",
+                      borderRadius: "5px",
+                      "& .MuiInputBase-input": {
+                        padding: "9px",
+                      },
+                      "& .MuiOutlinedInput-root": {
+                        "&.Mui-focused fieldset": {
+                          borderColor: "#1D1D1B",
+                        },
+                      },
+                    }}
+                  />
+                  <Button
+                    sx={{
+                      mt: "10px",
+                      textTransform: "none",
+                      color: "#fff",
+                      fontSize: "16px",
+                      fontWeight: 600,
+                      boxShadow: "0px 8px 10px rgba(0, 0, 0, 0.25)",
+                      backgroundColor: "#f15175",
+                      "&:hover": {
+                        backgroundColor: "#f15175E6",
+                      },
+                    }}
+                  >
+                    Submit
+                  </Button>
+                </Box>
+              ) : (
+                <Button
+                  sx={{
+                    position: "absolute",
+                    zIndex: 9999999999,
+                    bottom: 20,
+                    right: 50,
+                  }}
+                  onClick={() => setUserNumber(true)}
+                >
+                  <Box
+                    component={"img"}
+                    src={playBtn}
+                    sx={{
+                      position: "relative",
+                      borderRadius: "50%",
+                      height: "300px",
+                      maxWidth: "300px",
+                      objectFit: "fit",
+                    }}
+                  />
+                </Button>
+              )}
             </SwiperSlide>
           );
         })}
