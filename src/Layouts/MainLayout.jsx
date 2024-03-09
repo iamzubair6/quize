@@ -1,8 +1,6 @@
 import { Box, CircularProgress } from "@mui/material";
-import React, { Suspense, useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
-import Footer from "../Components/Shared/Footer";
-import Header from "../Components/Shared/Header";
 import ThemeLayout from "./ThemeLayout";
 
 const MainLayout = () => {
@@ -22,7 +20,6 @@ const MainLayout = () => {
           padding: "0 !important",
         }}
       >
-        <Header />
         <Suspense
           fallback={
             <Box
@@ -47,7 +44,6 @@ const MainLayout = () => {
             <Outlet />
           </Box>
         </Suspense>
-        <Footer />
       </Box>
     </ThemeLayout>
   );
