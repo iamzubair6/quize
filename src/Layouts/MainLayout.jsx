@@ -1,4 +1,5 @@
-import { Box, CircularProgress } from "@mui/material";
+import SideDrawer from "@/Components/Shared/SideDrawer";
+import { Box, CircularProgress, Container } from "@mui/material";
 import { Suspense, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import ThemeLayout from "./ThemeLayout";
@@ -12,29 +13,37 @@ const MainLayout = () => {
 
   return (
     <ThemeLayout>
-      <Box
+      <Container
+        maxWidth="xxl"
         sx={{
-          minHeight: "100vh",
           display: "flex",
-          flexDirection: "column",
-          padding: "0 !important",
         }}
       >
-        <Suspense
-          fallback={
-            <Box
-              sx={{
-                flexGrow: 1,
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                bgcolor: "primary.main",
-              }}
-            >
-              <CircularProgress sx={{ color: "white" }} />
-            </Box>
-          }
+        <SideDrawer />
+        <Box
+          component="main"
+          sx={{
+            flexGrow: 1,
+            minHeight: "100vh",
+            display: "flex",
+            flexDirection: "column",
+          }}
         >
+          <Suspense
+            fallback={
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  bgcolor: "primary.main",
+                }}
+              >
+                <CircularProgress sx={{ color: "white" }} />
+              </Box>
+            }
+          />
           <Box
             sx={{
               flexGrow: 1,
@@ -43,8 +52,8 @@ const MainLayout = () => {
           >
             <Outlet />
           </Box>
-        </Suspense>
-      </Box>
+        </Box>
+      </Container>
     </ThemeLayout>
   );
 };

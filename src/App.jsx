@@ -7,6 +7,8 @@ import {
 // import required css
 import "swiper/css";
 import "swiper/css/pagination";
+import MainLayout from "./Layouts/MainLayout";
+import UserDashBoard from "./Pages/UserDashBoard";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -14,17 +16,17 @@ export default function App() {
       path: "",
       element: <Home />,
     },
-    // {
-    //   path: "",
-    //   element: <MainLayout />,
-    //   children: [
-    //     // landing page
-    //     {
-    //       path: "",
-    //       element: <Home />,
-    //     },
-    //   ],
-    // },
+    {
+      path: "dashboard",
+      element: <MainLayout />,
+      children: [
+        // landing page
+        {
+          path: "",
+          element: <UserDashBoard />,
+        },
+      ],
+    },
     // fallback to landing page
     {
       path: "*",

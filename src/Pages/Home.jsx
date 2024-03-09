@@ -3,12 +3,14 @@ import slider2 from "@assets/banner02.jpg";
 import playBtn from "@assets/logo.jpg";
 import { Box, Button, TextField } from "@mui/material";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Mousewheel, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 const Home = () => {
   const [userNumber, setUserNumber] = useState(false);
+  const navigate = useNavigate();
   const cards = [
     {
       img: slider1,
@@ -106,6 +108,7 @@ const Home = () => {
                         backgroundColor: "#f15175E6",
                       },
                     }}
+                    onClick={() => navigate("/dashboard")}
                   >
                     Submit
                   </Button>
