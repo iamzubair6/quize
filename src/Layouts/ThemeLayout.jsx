@@ -1,8 +1,8 @@
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-import React from "react";
 
 const ThemeLayout = ({ children }) => {
+  const { breakpoints } = createTheme();
   const theme = createTheme({
     palette: {
       primary: {
@@ -29,7 +29,7 @@ const ThemeLayout = ({ children }) => {
       textBodyBlack: "#5E5E5E",
     },
     typography: {
-      fontFamily: ["DM Sans", "Lato", "sans-serif"].join(","),
+      fontFamily: ["Montserrat Variable", "Poppins", "sans-serif"].join(","),
     },
     components: {
       MuiCssBaseline: {
@@ -39,6 +39,11 @@ const ThemeLayout = ({ children }) => {
             padding: 0,
             minHeight: "100vh",
             textRendering: "optimizeSpeed",
+            //for non mui componet
+            "*": {
+              fontFamily: ["Montserrat Variable", "sans-serif"].join(","),
+              fontWeight: 400,
+            },
 
             // Box sizing rules
             "*,*::before,*::after": {
@@ -100,32 +105,48 @@ const ThemeLayout = ({ children }) => {
       MuiTypography: {
         styleOverrides: {
           h1: {
-            fontFamily: "Lato",
+            fontFamily: "Poppins",
             fontStyle: "normal",
-            fontWeight: "700",
-            fontSize: "72px",
-            lineHeight: "62px",
+            fontWeight: 900,
+            fontSize: "34px",
+            [breakpoints.down("md")]: {
+              fontSize: "24px",
+              lineHeight: "41px",
+            },
+            lineHeight: "51px",
+            color: "#1D1D1B",
           },
           h2: {
-            fontFamily: "Lato",
+            fontFamily: "Poppins",
             fontStyle: "normal",
-            fontWeight: "700",
-            fontSize: "54px",
-            lineHeight: "53px",
+            fontWeight: 700,
+            fontSize: "22px",
+            [breakpoints.down("md")]: {
+              fontSize: "18px",
+              lineHeight: "27px",
+            },
+            lineHeight: "33px",
+            color: "#1D1D1B",
           },
           h3: {
-            fontFamily: "Lato",
+            fontFamily: "Poppins",
             fontStyle: "normal",
-            fontWeight: "700",
-            fontSize: "40px",
-            lineHeight: "44px",
+            fontWeight: 600,
+            fontSize: "18px",
+            [breakpoints.down("md")]: {
+              fontSize: "16px",
+              lineHeight: "22px",
+            },
+            lineHeight: "27px",
+            color: "#1D1D1B",
           },
           h4: {
-            fontFamily: "Lato",
+            fontFamily: "Poppins",
             fontStyle: "normal",
-            fontWeight: "700",
-            fontSize: "28px",
-            lineHeight: "35px",
+            fontWeight: 300,
+            fontSize: "15px",
+            lineHeight: "23px",
+            color: "#1D1D1B",
           },
           h5: {
             fontFamily: "Lato",
@@ -135,11 +156,12 @@ const ThemeLayout = ({ children }) => {
             lineHeight: "26px",
           },
           body2: {
-            fontFamily: "DM Sans",
+            fontFamily: "Montserrat Variable",
             fontStyle: "normal",
-            fontWeight: "400",
+            fontWeight: 700,
             fontSize: "16px",
-            lineHeight: "22px",
+            lineHeight: "51px",
+            color: "#999",
           },
         },
       },
