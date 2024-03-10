@@ -16,7 +16,9 @@ const MainLayout = () => {
       <Container
         maxWidth="xxl"
         sx={{
+          padding: { xs: "0px", md: "0px 24px" },
           display: "flex",
+          flexDirection: { xs: "column", md: "unset" },
         }}
       >
         <SideDrawer />

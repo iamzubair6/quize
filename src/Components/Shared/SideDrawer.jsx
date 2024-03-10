@@ -10,11 +10,17 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
+  AppBar,
+  Avatar,
   Box,
   Button,
   Drawer,
   IconButton,
+  Menu,
+  MenuItem,
   Toolbar,
+  Tooltip,
+  Typography,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -58,6 +64,7 @@ const drawerMenus = [
   //     ],
   //   },
 ];
+const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const SideDrawer = () => {
   const [expanded, setExpanded] = useState(null);
@@ -66,9 +73,14 @@ const SideDrawer = () => {
   const drawerWidth = "290px";
   const [isMobileView, setIsMobileView] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // State to control drawer open/close
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleExpandedMenu = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : null);
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
   };
 
   const handleMenu = (path) => {
@@ -103,17 +115,79 @@ const SideDrawer = () => {
   return (
     <>
       {isMobileView ? (
-        <IconButton
-          onClick={toggleDrawer}
+        <AppBar
+          position="static"
           sx={{
-            color: "red",
-            position: "absolute",
-            top: -10,
-            left: 0,
+            width: "100%",
           }}
         >
-          <MenuIcon sx={{ fontSize: "30px" }} />
-        </IconButton>
+          <Toolbar
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+                justifyContent: "flex-start",
+              }}
+            >
+              <IconButton
+                onClick={toggleDrawer}
+                sx={{
+                  color: "white",
+                  p: 0,
+                  // position: "absolute",
+                  // top: -10,
+                  // left: 0,
+                }}
+              >
+                <MenuIcon sx={{ fontSize: "30px" }} />
+              </IconButton>
+              <Box
+                component={"img"}
+                src={logo}
+                alt=""
+                sx={{ width: "60px", objectFit: "cover" }}
+              />
+            </Box>
+            <Box sx={{ flexGrow: 0 }}>
+              <Tooltip title="Open settings">
+                <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                  <Avatar
+                    alt="Remy Sharp"
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8dXNlcnxlbnwwfHwwfHx8MA%3D%3D"
+                  />
+                </IconButton>
+              </Tooltip>
+              <Menu
+                sx={{ mt: "45px" }}
+                id="menu-appbar"
+                anchorEl={anchorElUser}
+                anchorOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                keepMounted
+                transformOrigin={{
+                  vertical: "top",
+                  horizontal: "right",
+                }}
+                open={Boolean(anchorElUser)}
+                onClose={handleCloseUserMenu}
+              >
+                {settings.map((setting) => (
+                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                    <Typography textAlign="center">{setting}</Typography>
+                  </MenuItem>
+                ))}
+              </Menu>
+            </Box>
+          </Toolbar>
+        </AppBar>
       ) : null}
       <Drawer
         anchor="left"
@@ -121,7 +195,7 @@ const SideDrawer = () => {
         open={isOpen} // Open drawer only when isOpen is true
         onClose={toggleDrawer}
         sx={{
-          zIndex: 1000,
+          zIndex: 1000000,
           width: drawerWidth,
           flexShrink: 0,
           "& .MuiDrawer-paper": {

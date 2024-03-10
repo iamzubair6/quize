@@ -9,7 +9,7 @@ const ThemeLayout = ({ children }) => {
         main: "#262d4a",
       },
       secondary: {
-        main: "#1F2353",
+        main: "#F5F5F5",
       },
       accent: {
         main: "#E8A125",
