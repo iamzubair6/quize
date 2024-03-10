@@ -25,6 +25,13 @@ export default function App() {
           path: "",
           element: <UserDashBoard />,
         },
+        {
+          path: "play",
+          element: <UserDashBoard />,
+          handle: {
+            crumb: { to: "/play" },
+          },
+        },
       ],
     },
     // fallback to landing page

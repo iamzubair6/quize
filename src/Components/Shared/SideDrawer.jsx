@@ -1,11 +1,14 @@
 import logo from "@assets/logo.jpg";
+import CampaignIcon from "@mui/icons-material/Campaign";
 import CircleIcon from "@mui/icons-material/Circle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import HistoryToggleOffIcon from "@mui/icons-material/HistoryToggleOff";
 import JoinInnerIcon from "@mui/icons-material/JoinInner";
+import LocalPlayIcon from "@mui/icons-material/LocalPlay";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import MenuIcon from "@mui/icons-material/Menu";
 import RedeemIcon from "@mui/icons-material/Redeem";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import {
   Accordion,
   AccordionDetails,
@@ -27,14 +30,29 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 const drawerMenus = [
   {
-    title: "Subscription",
-    icon: LoyaltyIcon,
-    path: "subscription",
+    title: "Play Quiz",
+    icon: LocalPlayIcon,
+    path: "dashboard/play",
+  },
+  {
+    title: "Buy Quiz",
+    icon: ShoppingCartIcon,
+    path: "buy",
   },
   {
     title: "Score",
     icon: JoinInnerIcon,
     path: "score",
+  },
+  {
+    title: "Campaign",
+    icon: CampaignIcon,
+    path: "campaign",
+  },
+  {
+    title: "Subscription",
+    icon: LoyaltyIcon,
+    path: "subscription",
   },
 
   {
