@@ -7,6 +7,7 @@ import {
 // import required css
 import "swiper/css";
 import "swiper/css/pagination";
+import BuyQuiz from "./Components/Dashboard/BuyQuiz";
 import MainLayout from "./Layouts/MainLayout";
 import UserDashBoard from "./Pages/UserDashBoard";
 
@@ -27,7 +28,7 @@ export default function App() {
         },
         {
           path: "play",
-          element: <UserDashBoard />,
+          element: <BuyQuiz />,
           handle: {
             crumb: { to: "/play" },
           },
