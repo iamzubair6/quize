@@ -1,6 +1,9 @@
+import BuyQuizDialog from "@/Components/Quiz/BuyQuizDialog";
 import { Button, Grid, Paper, Typography } from "@mui/material";
+import { useState } from "react";
 
 const BuyQuiz = () => {
+  const [open, setOpen] = useState(false);
   const packages = [
     { packageName: "Silver", numQuizzes: 10, price: 10 },
     { packageName: "Bronze", numQuizzes: 25, price: 35 },
@@ -43,13 +46,22 @@ const BuyQuiz = () => {
               >
                 PRICE: {item?.price} USD
               </Typography>
-              <Button variant="buttonOne" fullWidth>
+              <Button
+                variant="buttonOne"
+                fullWidth
+                onClick={() => setOpen(true)}
+              >
                 BUY NOW
               </Button>
             </Paper>
           </Grid>
         );
       })}
+      <BuyQuizDialog
+        open={open}
+        setOpen={setOpen}
+        handleClose={() => setOpen(false)}
+      />
     </Grid>
   );
 };
