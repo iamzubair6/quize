@@ -43,17 +43,17 @@ const drawerMenus = [
   {
     title: "Buy Quiz",
     icon: ShoppingCartIcon,
-    path: "buy",
+    path: "dashboard/buy",
   },
   {
     title: "Score",
     icon: JoinInnerIcon,
-    path: "score",
+    path: "dashboard/score",
   },
   {
     title: "Campaign",
     icon: CampaignIcon,
-    path: "campaign",
+    path: "dashboard/campaign",
   },
   {
     title: "Subscription",
@@ -314,13 +314,13 @@ const SideDrawer = () => {
                               <Button
                                 key={`drawer-sub-menu-${idx}`}
                                 size="small"
-                                onClick={() =>
+                                onClick={() => {
                                   navigate(
                                     `/${path}${
                                       childPath ? `/${childPath}` : ""
                                     }`
-                                  )
-                                }
+                                  );
+                                }}
                                 fullWidth
                                 variant="text"
                                 sx={{
@@ -376,7 +376,10 @@ const SideDrawer = () => {
                     <Button
                       fullWidth
                       variant="text"
-                      onClick={() => handleMenu(`/${path}`)}
+                      onClick={() => {
+                        handleMenu(`/${path}`);
+                        setIsOpen(false);
+                      }}
                       sx={{
                         bgcolor: Boolean(`/${path}` === pathname)
                           ? "white"

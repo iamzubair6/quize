@@ -5,8 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 // import required css
-import BuyQuiz from "@/Pages/BuyQuiz/BuyQuiz";
 import UserDashBoard from "@/Pages/Dashboard/UserDashBoard";
+import BuyQuiz from "@pages/BuyQuiz/BuyQuiz";
+import Campaign from "@pages/Campaign/Campaign";
+import PlayQuiz from "@pages/PlayQuiz/PlayQuiz";
+import Score from "@pages/Score/Score";
 import "swiper/css";
 import "swiper/css/pagination";
 import MainLayout from "./Layouts/MainLayout";
@@ -21,17 +24,25 @@ export default function App() {
       path: "dashboard",
       element: <MainLayout />,
       children: [
-        // landing page
         {
           path: "",
           element: <UserDashBoard />,
         },
         {
           path: "play",
+          element: <PlayQuiz />,
+        },
+        {
+          path: "buy",
           element: <BuyQuiz />,
-          handle: {
-            crumb: { to: "/play" },
-          },
+        },
+        {
+          path: "score",
+          element: <Score />,
+        },
+        {
+          path: "campaign",
+          element: <Campaign />,
         },
       ],
     },

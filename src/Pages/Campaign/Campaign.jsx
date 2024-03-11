@@ -18,6 +18,7 @@ const Campaign = () => {
                   display: "flex",
                   flexDirection: "column",
                   gap: "20px",
+                  width: 1,
                 }}
               >
                 <Box
