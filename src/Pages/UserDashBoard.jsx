@@ -1,4 +1,4 @@
-import BuyQuiz from "@/Components/Dashboard/BuyQuiz";
+import BuyQuiz from "@/Components/Shared/BuyQuiz";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Box, Typography } from "@mui/material";
 
@@ -33,7 +33,12 @@ const UserDashBoard = () => {
           PLAY QUIZ
         </Typography>
       </Box>
-      <BuyQuiz />
+      <Box>
+        <Typography variant="h2" textAlign={"center"} sx={{ pb: "30px" }}>
+          Buy Quiz Packages
+        </Typography>
+        <BuyQuiz />
+      </Box>
     </Box>
   );
 };

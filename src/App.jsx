@@ -5,11 +5,11 @@ import {
   RouterProvider,
 } from "react-router-dom";
 // import required css
+import BuyQuiz from "@components/Shared/BuyQuiz";
+import UserDashBoard from "@pages/UserDashBoard";
 import "swiper/css";
 import "swiper/css/pagination";
-import BuyQuiz from "./Components/Dashboard/BuyQuiz";
 import MainLayout from "./Layouts/MainLayout";
-import UserDashBoard from "./Pages/UserDashBoard";
 
 export default function App() {
   const routes = createBrowserRouter([

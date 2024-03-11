@@ -3,6 +3,7 @@ import CampaignIcon from "@mui/icons-material/Campaign";
 import CircleIcon from "@mui/icons-material/Circle";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import HistoryToggleOffIcon from "@mui/icons-material/HistoryToggleOff";
+import HomeIcon from "@mui/icons-material/Home";
 import JoinInnerIcon from "@mui/icons-material/JoinInner";
 import LocalPlayIcon from "@mui/icons-material/LocalPlay";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
@@ -29,6 +30,11 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const drawerMenus = [
+  {
+    title: "Home",
+    icon: HomeIcon,
+    path: "dashboard",
+  },
   {
     title: "Play Quiz",
     icon: LocalPlayIcon,
