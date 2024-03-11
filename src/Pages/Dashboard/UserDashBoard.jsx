@@ -2,6 +2,7 @@ import BuyQuiz from "@/Pages/BuyQuiz/BuyQuiz";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Box, Typography } from "@mui/material";
 import Score from "@pages/Score/Score";
+import Campaign from "../Campaign/Campaign";
 
 const UserDashBoard = () => {
   return (
@@ -39,6 +40,7 @@ const UserDashBoard = () => {
       </Typography>
       <BuyQuiz />
       <Score />
+      <Campaign />
     </Box>
   );
 };

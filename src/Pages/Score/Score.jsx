@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 
 const Score = () => {
   return (
-    <Box>
+    <Box sx={{ width: 1 }}>
       <Typography variant="h2" textAlign={"center"} sx={{ pb: "30px" }}>
         SCORE
       </Typography>
@@ -23,8 +23,8 @@ const Score = () => {
         <Button variant="contained" sx={{ p: "10px" }}>
           Gift Pack
         </Button>
-        <ScoreCard />
       </Box>
+      <ScoreCard />
     </Box>
   );
 };
