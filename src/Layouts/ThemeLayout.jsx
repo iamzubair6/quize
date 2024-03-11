@@ -151,7 +151,7 @@ const ThemeLayout = ({ children }) => {
           h5: {
             fontFamily: "Lato",
             fontStyle: "normal",
-            fontWeight: "700",
+            fontWeight: 700,
             fontSize: "18px",
             lineHeight: "26px",
           },
@@ -164,6 +164,56 @@ const ThemeLayout = ({ children }) => {
             color: "#999",
           },
         },
+        variants: [
+          {
+            props: { variant: "body3" },
+            style: {
+              display: "block",
+              fontSize: "28px",
+              lineHeight: "33px",
+            },
+          },
+          {
+            props: { variant: "body4" },
+            style: {
+              display: "block",
+              fontSize: "24px",
+              lineHeight: "28px",
+            },
+          },
+          {
+            props: { variant: "body5" },
+            style: {
+              display: "block",
+              fontSize: "22px",
+              lineHeight: "26px",
+            },
+          },
+          {
+            props: { variant: "body6" },
+            style: {
+              display: "block",
+              fontSize: "20px",
+              lineHeight: "26px",
+            },
+          },
+          {
+            props: { variant: "body7" },
+            style: {
+              display: "block",
+              fontSize: "18px",
+              lineHeight: "21px",
+            },
+          },
+          {
+            props: { variant: "body8" },
+            style: {
+              display: "block",
+              fontSize: "16px",
+              lineHeight: "20px",
+            },
+          },
+        ],
       },
       MuiButton: {
         variants: [
@@ -181,6 +231,20 @@ const ThemeLayout = ({ children }) => {
               },
             },
           },
+          // {
+          //   props: { variant: "buttonTwo" },
+          //   style: {
+          //     textTransform: "none",
+          //     color: "#0B0B0B",
+          //     fontSize: "16px",
+          //     fontWeight: 600,
+          //     boxShadow: "0px 8px 10px rgba(0, 0, 0, 0.25)",
+          //     backgroundColor: "#f15175",
+          //     "&:hover": {
+          //       backgroundColor: "#f15175E6",
+          //     },
+          //   },
+          // },
         ],
       },
     },

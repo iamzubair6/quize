@@ -1,6 +1,7 @@
 import BuyQuiz from "@/Pages/BuyQuiz/BuyQuiz";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Box, Typography } from "@mui/material";
+import Score from "@pages/Score/Score";
 
 const UserDashBoard = () => {
   return (
@@ -33,12 +34,11 @@ const UserDashBoard = () => {
           PLAY QUIZ
         </Typography>
       </Box>
-      <Box>
-        <Typography variant="h2" textAlign={"center"} sx={{ pb: "30px" }}>
-          Buy Quiz Packages
-        </Typography>
-        <BuyQuiz />
-      </Box>
+      <Typography variant="h2" textAlign={"center"}>
+        Buy Quiz Packages
+      </Typography>
+      <BuyQuiz />
+      <Score />
     </Box>
   );
 };

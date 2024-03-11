@@ -1,6 +1,9 @@
 import BuyQuizDialog from "@/Components/Quiz/BuyQuizDialog";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import QuizIcon from "@mui/icons-material/Quiz";
 import { Button, Grid, Paper, Typography } from "@mui/material";
 import { useState } from "react";
+import { TbCoinTakaFilled } from "react-icons/tb";
 
 const BuyQuiz = () => {
   const [open, setOpen] = useState(false);
@@ -11,7 +14,7 @@ const BuyQuiz = () => {
     { packageName: "Platinum", numQuizzes: 100, price: 75 },
   ];
   return (
-    <Grid container columnSpacing={"15px"} rowGap={"15px"}>
+    <Grid container columnSpacing={"15px"} rowSpacing={"15px"}>
       {packages.map((item, idx) => {
         return (
           <Grid item xs={12} sm={6} md={4} lg={4} key={idx}>
@@ -27,24 +30,40 @@ const BuyQuiz = () => {
                 variant="body2"
                 sx={{
                   color: "black",
-                  bgcolor: "textBodyGray",
                   p: "5px",
+                  display: "flex",
+                  gap: "5px",
+                  alignItems: "center",
                 }}
               >
-                PACKAGE NAME: {item?.packageName}
+                <InventoryIcon sx={{ fontSize: "20px" }} /> PACKAGE NAME:{" "}
+                {item?.packageName}
               </Typography>
-              <Typography variant="body2" sx={{ p: "5px", color: "black" }}>
-                NUMBER QUIZZES: {item?.numQuizzes}
+              <Typography
+                variant="body2"
+                sx={{
+                  p: "5px",
+                  color: "black",
+                  display: "flex",
+                  gap: "5px",
+                  alignItems: "center",
+                }}
+              >
+                <QuizIcon sx={{ fontSize: "20px" }} /> NUMBER QUIZZES:{" "}
+                {item?.numQuizzes}
               </Typography>
               <Typography
                 variant="body2"
                 sx={{
                   color: "black",
-                  bgcolor: "textBodyGray",
                   p: "5px",
+                  display: "flex",
+                  gap: "5px",
+                  alignItems: "center",
                 }}
               >
-                PRICE: {item?.price} USD
+                <TbCoinTakaFilled style={{ fontSize: "20px" }} />
+                PRICE: {item?.price} BDT
               </Typography>
               <Button
                 variant="buttonOne"
@@ -57,11 +76,7 @@ const BuyQuiz = () => {
           </Grid>
         );
       })}
-      <BuyQuizDialog
-        open={open}
-        setOpen={setOpen}
-        handleClose={() => setOpen(false)}
-      />
+      <BuyQuizDialog open={open} handleClose={() => setOpen(false)} />
     </Grid>
   );
 };
