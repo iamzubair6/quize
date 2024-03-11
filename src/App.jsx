@@ -1,12 +1,12 @@
-import Home from "@pages/Home";
+import Home from "@/Pages/Home/Home";
 import {
   createBrowserRouter,
   Navigate,
   RouterProvider,
 } from "react-router-dom";
 // import required css
-import BuyQuiz from "@components/Shared/BuyQuiz";
-import UserDashBoard from "@pages/UserDashBoard";
+import BuyQuiz from "@/Pages/BuyQuiz/BuyQuiz";
+import UserDashBoard from "@/Pages/Dashboard/UserDashBoard";
 import "swiper/css";
 import "swiper/css/pagination";
 import MainLayout from "./Layouts/MainLayout";

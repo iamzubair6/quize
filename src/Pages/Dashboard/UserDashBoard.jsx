@@ -1,4 +1,4 @@
-import BuyQuiz from "@/Components/Shared/BuyQuiz";
+import BuyQuiz from "@/Pages/BuyQuiz/BuyQuiz";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import { Box, Typography } from "@mui/material";
 
