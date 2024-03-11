@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     minify: true,
     manifest: true,
+    outDir: "build",
   },
   resolve: {
     alias: [
