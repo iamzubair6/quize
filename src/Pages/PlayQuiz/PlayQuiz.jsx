@@ -114,6 +114,7 @@ const PlayQuiz = () => {
                   },
                 }}
                 onClick={() => handleAnswer(option)}
+                onTouchStart={() => handleAnswer(option)}
                 disabled={showResult || !!selectedOption}
               >
                 {option}
